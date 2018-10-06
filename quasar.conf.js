@@ -42,18 +42,26 @@ module.exports = function (ctx) {
       components: [
         'QLayout',
         'QLayoutHeader',
+        'QLayoutFooter',
         'QLayoutDrawer',
         'QPageContainer',
         'QPage',
         'QToolbar',
         'QToolbarTitle',
         'QBtn',
+        'QInput',
         'QIcon',
         'QList',
         'QListHeader',
         'QItem',
         'QItemMain',
-        'QItemSide'
+        'QItemSide',
+        'QPageSticky',
+        'QFab',
+        'QFabAction',
+        'QTabs',
+        'QTab',
+        'QModal'
       ],
       directives: [
         'Ripple'
