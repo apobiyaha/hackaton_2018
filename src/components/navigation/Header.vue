@@ -1,6 +1,6 @@
 <template>
   <q-layout-header>
-    <q-toolbar color="primary" :inverted="$q.theme === 'ios'">
+    <q-toolbar color="negative" :inverted="$q.theme === 'ios'">
       <q-btn @click="openDrawer" aria-label="Menu" flat dense round>
         <q-icon name="menu" color="neutral"/>
       </q-btn>

@@ -61,10 +61,12 @@ module.exports = function (ctx) {
         'QFabAction',
         'QTabs',
         'QTab',
-        'QModal'
+        'QModal',
+        'QPopover'
       ],
       directives: [
-        'Ripple'
+        'Ripple',
+        'TouchSwipe'
       ],
       // Quasar plugins
       plugins: [
@@ -74,7 +76,7 @@ module.exports = function (ctx) {
       // i18n: 'de' // Quasar language
     },
     // animations: 'all' --- includes all animations
-    animations: [],
+    animations: 'all',
     ssr: {
       pwa: false
     },
