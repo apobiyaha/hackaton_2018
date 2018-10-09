@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import products from '../products/list'
 export default {
   name: 'History',
   data () {
@@ -44,56 +45,7 @@ export default {
           style: 'width: 50px'
         }
       ],
-      oldProducts: {
-        1: {
-          name: 'Чипсы',
-          quantity: 15,
-          cost: 2.30
-        },
-
-        2: {
-          name: 'Пиво',
-          quantity: 1,
-          cost: 7.0
-        },
-
-        3: {
-          name: 'Сосиски',
-          quantity: 100,
-          cost: 3.10
-        }
-      },
-      products: [
-        {
-          name: 'Молоко',
-          quantity: 15,
-          cost: 2.30
-        },
-
-        {
-          name: 'Селёдка',
-          quantity: 1,
-          cost: 0.70
-        },
-
-        {
-          name: 'Туалетная бумага',
-          quantity: 100,
-          cost: 5.01
-        },
-
-        {
-          name: 'Штаны',
-          quantity: 1,
-          cost: 40.50
-        },
-
-        {
-          name: 'Пиво',
-          quantity: 3,
-          cost: 12.30
-        }]
-
+      products: products
     }
   }
 }

@@ -17,7 +17,39 @@
         <div class="row justify-center">
           <h4>Покупок в корзине: <b>{{counter}}</b></h4>
         </div>
-        <div class="row shot-button justify-center">
+        <div class="row" v-if="isShot">
+          <div class="row q-ma-sm">
+            Наименование: &nbsp;
+            <b>{{products[currentShot].name}}</b>
+          </div>
+          <div class="row q-ma-sm">
+            Стоимость:&nbsp;
+            <b>{{products[currentShot].cost}}</b>
+          </div>
+        </div>
+        <div class="row justify-center" v-if="isShot">
+          <q-btn color="negative"
+                 round
+                 size="3rem"
+                 class="q-ma-sm"
+                 @click="returnProduct">
+            <span style="font-size: 1.2rem;
+                         font-weight: bold">
+                Отклонить
+            </span>
+          </q-btn>
+          <q-btn color="positive"
+                 round
+                 size="3rem"
+                 class="q-ma-sm"
+                 @click="purchaseProduct">
+            <span style="font-size: 1.2rem;
+                        font-weight: bold">
+                В корзину
+            </span>
+          </q-btn>
+        </div>
+        <div class="row shot-button justify-center" v-if="!isShot">
           <q-btn  round
                   size="3rem"
                   color="primary"
@@ -30,20 +62,39 @@
 </template>
 
 <script>
+import products from '../products/list'
 export default {
   name: 'AddPurchase',
   data () {
     return {
       isCodeVisible: false,
-      counter: 0
+      counter: 0,
+      currentShot: -1,
+      isShot: false,
+      products: products
+    }
+  },
+  watch: {
+    currentShot: function () {
+      if (this.currentShot >= products.length) {
+        this.currentShot = 0
+      }
     }
   },
   methods: {
+    returnProduct () {
+      this.isShot = false
+    },
+    purchaseProduct () {
+      this.counter += 1
+      this.isShot = false
+    },
     countShots () {
       this.isCodeVisible = true
       setTimeout(function () {
         this.isCodeVisible = false
-        this.counter += 1
+        this.currentShot += 1
+        this.isShot = !this.isShot
       }.bind(this), 500)
     }
   }
@@ -61,7 +112,7 @@ export default {
     margin-right: auto;
   }
   .shot-button{
-    margin-top: 50px;
+    margin-top: 10px;
   }
   .code-window{
     height: 230px;

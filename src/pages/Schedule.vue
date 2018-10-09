@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    schedule
+    shedule
   </q-page>
 </template>
 
