@@ -1,21 +1,20 @@
 <template>
   <q-page>
-    <div class="row justify-center" v-for="card in cards" :key="card">
+    <div class="row justify-center" v-for="card in cards" :key="card.name">
       <card  :brand="card.brand"
              :number="card.number"
              :is-active="card.active"
              :name="card.name"
              :balance="card.balance"
-             :currency="card.currency"
-             @click="setActive(card)">
+             @get-balance="getBalanceRandom(card)"
+             :currency="card.currency">
       </card>
     </div>
     <div class="row justify-center">
       <q-btn
         size="1.1rem"
         color="primary"
-        icon="add_circle_outline"
-        @click="countShots">
+        icon="add_circle_outline">
         <span style="font-size: 0.6rem">Add card</span>
       </q-btn>
     </div>
@@ -58,10 +57,15 @@ export default {
     }
   },
   methods: {
+    getBalanceRandom (card) {
+      this.cards[card].balance = Math.random() * (999 - 50) + 50
+      console.log(card)
+    }
     // setActive (card) {
     //   this.cards.card.active = true;
     // }
-  }
+  },
+
 }
 </script>
 

@@ -15,7 +15,7 @@
         <q-btn
               round
               color="amber"
-        >
+              @click="getBalance">
          <span style="font-size: 0.6rem">{{balance}} {{currency}}</span>
         </q-btn>
       </div>
@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import eventbus from '../../eventbus/eventbus'
+
 export default {
   name: 'card',
   props: {
@@ -44,6 +46,11 @@ export default {
     },
     currency: {
       default: 'RUB'
+    }
+  },
+  methods: {
+    getBalance () {
+      eventbus.$emit('get-balance')
     }
   }
 }
