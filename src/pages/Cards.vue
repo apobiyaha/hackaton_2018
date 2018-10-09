@@ -64,7 +64,7 @@ export default {
     // setActive (card) {
     //   this.cards.card.active = true;
     // }
-  },
+  }
 
 }
 </script>

@@ -55,14 +55,17 @@ module.exports = function (ctx) {
         'QListHeader',
         'QItem',
         'QItemMain',
+        'QItemSeparator',
         'QItemSide',
+        'QItemTile',
         'QPageSticky',
         'QFab',
         'QFabAction',
         'QTabs',
         'QTab',
         'QModal',
-        'QPopover'
+        'QPopover',
+        'QDatetimePicker'
       ],
       directives: [
         'Ripple',

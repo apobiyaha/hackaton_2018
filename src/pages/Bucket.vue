@@ -2,7 +2,7 @@
   <q-page class="bucket--page">
     <h3 class="caption">Корзина</h3>
 
-    <q-list v-for="item in bucket" :key="item.name">
+    <q-list v-for="item in bucket" :key="item.name" highlight dense>
       <q-item v-touch-swipe.right="handleSwipeToRemoveItem">
         <q-item-main :label="item.name"/>
         <div class="item-secondary stamp">
