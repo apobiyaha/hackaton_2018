@@ -65,7 +65,12 @@ module.exports = function (ctx) {
         'QTab',
         'QModal',
         'QPopover',
-        'QDatetimePicker'
+        'QDatetimePicker',
+        'QTable',
+        'QTh',
+        'QTr',
+        'QTd',
+        'QTableColumns'
       ],
       directives: [
         'Ripple',

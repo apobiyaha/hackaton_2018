@@ -1,33 +1,12 @@
 <template>
   <q-page>
      <q-datetime-picker v-model="model" type="date" />
-    <q-list highlight>
-      <q-list-header>Недавние покупки</q-list-header>
-      <q-item v-for="product in products" :key="product.name">
-        <q-item-side>
-          <q-item-tile avatar>
-            <q-icon name="thumb_up" />
-          </q-item-tile>
-        </q-item-side>
-        <q-item-main :label="product.name" />
-        <q-item-side right>
-          {{product.cost}} BYN
-        </q-item-side>
-      </q-item>
-      <q-item-separator />
-      <q-list-header>Покупки за {{model.getDate()}}-{{model.getMonth()}}-{{model.getFullYear()}}</q-list-header>
-      <q-item v-for="product in oldProducts" :key="product.cost">
-        <q-item-side>
-          <q-item-tile avatar>
-            <q-icon name="thumb_up" />
-          </q-item-tile>
-        </q-item-side>
-        <q-item-main :label="product.name" />
-        <q-item-side right>
-          {{product.cost}} BYN
-        </q-item-side>
-      </q-item>
-    </q-list>
+    <q-table
+      :title="`Покупки за ${model.getDate()}-${model.getMonth()}-${model.getFullYear()}` "
+      :data="products"
+      :columns="columns"
+      row-key="name"
+    />
   </q-page>
 </template>
 
@@ -37,6 +16,34 @@ export default {
   data () {
     return {
       model: new Date(), // as in "right this moment"
+      columns: [
+        {
+          name: 'desc',
+          required: true,
+          label: 'Продукт',
+          align: 'left',
+          field: 'name',
+          sortable: true,
+          classes: 'my-class',
+          style: 'width: 50px'
+        },
+        {
+          label: 'Количество',
+          field: 'quantity',
+          align: 'left',
+          sortable: true,
+          classes: 'my-class',
+          style: 'width: 50px'
+        },
+        {
+          label: 'Стоимость',
+          field: 'cost',
+          sortable: true,
+          align: 'left',
+          classes: 'my-class',
+          style: 'width: 50px'
+        }
+      ],
       oldProducts: {
         1: {
           name: 'Чипсы',
@@ -56,38 +63,37 @@ export default {
           cost: 3.10
         }
       },
-      products: {
-        1: {
+      products: [
+        {
           name: 'Молоко',
           quantity: 15,
           cost: 2.30
         },
 
-        2: {
+        {
           name: 'Селёдка',
           quantity: 1,
           cost: 0.70
         },
 
-        3: {
+        {
           name: 'Туалетная бумага',
           quantity: 100,
           cost: 5.01
         },
 
-        4: {
+        {
           name: 'Штаны',
           quantity: 1,
           cost: 40.50
         },
 
-        5: {
+        {
           name: 'Пиво',
           quantity: 3,
           cost: 12.30
-        }
+        }]
 
-      }
     }
   }
 }
