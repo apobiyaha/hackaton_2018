@@ -3,7 +3,7 @@
      <q-datetime-picker v-model="model" type="date" />
     <q-list highlight>
       <q-list-header>Недавние покупки</q-list-header>
-      <q-item v-for="product in products" :key="product">
+      <q-item v-for="product in products" :key="product.name">
         <q-item-side>
           <q-item-tile avatar>
             <q-icon name="thumb_up" />
@@ -16,7 +16,7 @@
       </q-item>
       <q-item-separator />
       <q-list-header>Покупки за {{model.getDate()}}-{{model.getMonth()}}-{{model.getFullYear()}}</q-list-header>
-      <q-item v-for="product in oldProducts" :key="product">
+      <q-item v-for="product in oldProducts" :key="product.cost">
         <q-item-side>
           <q-item-tile avatar>
             <q-icon name="thumb_up" />
