@@ -63,9 +63,13 @@ export default {
     width: 250px;
     height: 150px;
     background-color: #f1f1f1;
+    transition: box-shadow 0.5s;
   }
   .card-active {
     border: limegreen solid 1px;
+    -webkit-box-shadow: 0px 10px 20px -6px rgba(50,205,50,1);
+    -moz-box-shadow: 0px 10px 20px -6px rgba(50,205,50,1);
+    box-shadow: 0px 10px 20px -6px rgba(50,205,50,1);
   }
   .brand-base {
     display: inline-block;
