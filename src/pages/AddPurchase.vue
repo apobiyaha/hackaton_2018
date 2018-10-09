@@ -7,7 +7,7 @@
             <div class="corner-right-top"></div>
           </div>
           <div class="row code">
-            <img  :class="{'code-image': !isCodeVisible, 'code-image-op1': isCodeVisible}" src="../assets/img/code.png" alt="">
+            <img :class="{'code-image': !isCodeVisible, 'code-image-op1': isCodeVisible}" src="../assets/img/code.png" alt="">
           </div>
           <div class="row justify-between">
             <div class="corner-left-bottom"></div>
@@ -52,7 +52,7 @@ export default {
 
 <style scoped>
   h4 {
-    color:#027be3;
+    color: #EB3E4A;
   }
   .code {
     height: 150px;
