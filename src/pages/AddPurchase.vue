@@ -1,11 +1,11 @@
 <template>
-  <div id="q-app">
-    <router-view/>
-  </div>
+  <q-page>
+    add purchase
+  </q-page>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'AddPurchase'
 }
 </script>

@@ -42,21 +42,31 @@ module.exports = function (ctx) {
       components: [
         'QLayout',
         'QLayoutHeader',
+        'QLayoutFooter',
         'QLayoutDrawer',
         'QPageContainer',
         'QPage',
         'QToolbar',
         'QToolbarTitle',
         'QBtn',
+        'QInput',
         'QIcon',
         'QList',
         'QListHeader',
         'QItem',
         'QItemMain',
-        'QItemSide'
+        'QItemSide',
+        'QPageSticky',
+        'QFab',
+        'QFabAction',
+        'QTabs',
+        'QTab',
+        'QModal',
+        'QPopover'
       ],
       directives: [
-        'Ripple'
+        'Ripple',
+        'TouchSwipe'
       ],
       // Quasar plugins
       plugins: [
@@ -66,7 +76,7 @@ module.exports = function (ctx) {
       // i18n: 'de' // Quasar language
     },
     // animations: 'all' --- includes all animations
-    animations: [],
+    animations: 'all',
     ssr: {
       pwa: false
     },
