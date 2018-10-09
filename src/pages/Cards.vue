@@ -11,9 +11,8 @@
       </card>
     </div>
     <div class="row justify-center">
-      <q-btn
+      <q-btn class="add-card"
         size="1.1rem"
-        color="primary"
         icon="add_circle_outline">
         <span style="font-size: 0.6rem">Add card</span>
       </q-btn>
@@ -70,5 +69,11 @@ export default {
 </script>
 
 <style scoped>
-
+.add-card {
+  margin: 10px;
+  border-radius: 10px;
+  width: 250px;
+  height: 150px;
+  background-color: #f1f1f1;
+}
 </style>

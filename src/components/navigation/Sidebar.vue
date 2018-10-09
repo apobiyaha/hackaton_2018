@@ -30,7 +30,7 @@
 
       <q-item @click.native="$router.push('/schedule')">
         <q-item-side icon="trending_up"/>
-        <q-item-main label="График" sublabel="За последний месяц"/>
+        <q-item-main label="Статистика" sublabel="За последний месяц"/>
       </q-item>
 
       <q-item @click.native="$router.push('/help')">
