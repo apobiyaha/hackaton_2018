@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "A Quasar Framework app",
   "productName": "sample",
-  "cordovaId": "org.cordova.quasar.app",
   "author": "apobiyaha <apobiyaha@intervale.ru>",
   "private": true,
   "scripts": {
