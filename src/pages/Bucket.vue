@@ -1,8 +1,12 @@
 <template>
   <q-page class="bucket--page">
+    <q-modal ref="loader" class="maximized">
+      <q-spinner-puff class="spinner" name="bars" color="primary" :size="150"></q-spinner-puff>
+    </q-modal>
+
     <h3 class="caption">Корзина</h3>
 
-    <q-list v-for="item in bucket" :key="item.name" highlight dense>
+    <q-list v-for="(item, index) in bucket" :key="index" highlight dense>
       <q-item v-touch-swipe.right="handleSwipeToRemoveItem">
         <q-item-main :label="item.name"/>
         <div class="item-secondary stamp">
@@ -12,7 +16,10 @@
     </q-list>
 
     <div class="total-amount">
-      <span>Всего: </span>{{ countTotalAmount }}
+      <span>Всего: </span>
+      <span>{{ countTotalAmount }}</span>
+      <q-btn class="pay" round color="primary" icon="money" @click="handlePay"/>
+      <q-btn round color="negative" icon="delete_forever" @click="clearBucket"/>
     </div>
   </q-page>
 </template>
@@ -22,71 +29,35 @@ export default {
   name: 'Bucket',
   data () {
     return {
-      totalAmount: 0,
-      bucket: [
-        {
-          name: 'Колбаса',
-          cost: 13
-        },
-        {
-          name: 'Сыр',
-          cost: 7.4
-        },
-        {
-          name: 'Молоко',
-          cost: 5.83
-        },
-        {
-          name: 'Чай',
-          cost: 4.54
-        },
-        {
-          name: 'Печенье',
-          cost: 8
-        },
-        {
-          name: 'Чипсы',
-          cost: 7.4
-        },
-        {
-          name: 'Мясо',
-          cost: 5.83
-        },
-        {
-          name: 'Кофе',
-          cost: 4.54
-        },
-        {
-          name: 'Шоколад',
-          cost: 8
-        },
-        {
-          name: 'Конфеты',
-          cost: 7.4
-        },
-        {
-          name: 'Творог',
-          cost: 5.83
-        },
-        {
-          name: 'Сырки',
-          cost: 4.54
-        },
-        {
-          name: 'Рыба',
-          cost: 8
-        }
-      ]
+      totalAmount: 0.00,
+      bucket: [{}]
     }
   },
   computed: {
     countTotalAmount () {
-      // eslint-disable-next-line
-      this.bucket.map((item) => { this.totalAmount += item.cost });
-      return this.totalAmount.toFixed(2)
+      if (this.bucket) {
+        // eslint-disable-next-line
+        this.bucket.map((item) => { this.totalAmount += item.cost });
+        return this.totalAmount.toFixed(2) || this.totalAmount
+      }
     }
   },
   methods: {
+    clearBucket () {
+      this.totalAmount = 0.00
+      this.bucket = []
+      window.localStorage.clear()
+    },
+    handlePay () {
+      setTimeout(function () {
+        this.$router.push('/qr')
+        this.$refs.loader.toggle()
+        this.totalAmount = 0.00
+        this.bucket = []
+        window.localStorage.clear()
+      }.bind(this), 2000)
+      this.$refs.loader.toggle()
+    },
     handleSwipeToRemoveItem (obj) {
       let index = this.bucket.findIndex((item) => {
         if (obj.evt.target.innerHTML.indexOf(item.name) !== -1) {
@@ -94,11 +65,15 @@ export default {
         }
       })
       this.bucket.splice(index, 1)
-      this.totalAmount = 0
+      this.totalAmount = 0.00
     }
   },
   created () {
-    this.totalAmount = 0
+    this.bucket = JSON.parse(window.localStorage.getItem('bucket'))
+  },
+  beforeRouteLeave (to, from, next) {
+    window.localStorage.setItem('bucket', JSON.stringify(this.bucket))
+    next()
   }
 }
 </script>
@@ -112,5 +87,15 @@ export default {
     font-size: 20px;
     padding: 40px;
     text-align: center;
+  }
+  .pay {
+    margin: 0 10px 0 20px;
+  }
+  .spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
   }
 </style>

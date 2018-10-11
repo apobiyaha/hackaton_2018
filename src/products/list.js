@@ -52,5 +52,15 @@ export default [
     name: 'Колбаса',
     quantity: 1,
     cost: 11.40
+  },
+  {
+    name: 'Сыр',
+    quantity: 1,
+    cost: 8.45
+  },
+  {
+    name: 'Яйца',
+    quantity: 10,
+    cost: 3.70
   }
 ]

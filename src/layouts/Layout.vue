@@ -5,7 +5,7 @@
     <q-footer></q-footer>
 
     <q-page-container id="page-container">
-      <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" :duration="{ enter: 300, leave: 300 }">
+      <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" :duration="{ leave: 500 }">
         <router-view/>
       </transition>
     </q-page-container>
