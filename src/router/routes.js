@@ -32,6 +32,10 @@ export default [
         component: () => import('pages/Schedule.vue')
       },
       {
+        path: 'qr',
+        component: () => import('pages/Qr.vue')
+      },
+      {
         path: 'help',
         component: () => import('pages/Help.vue')
       }

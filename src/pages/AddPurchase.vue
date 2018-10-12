@@ -23,7 +23,7 @@
             <b>{{products[currentShot].name}}</b>
           </div>
           <div class="row q-ma-sm">
-            Стоимость:&nbsp;
+            Стоимость: &nbsp;
             <b>{{products[currentShot].cost}}</b>
           </div>
         </div>
@@ -63,6 +63,7 @@
 
 <script>
 import products from '../products/list'
+
 export default {
   name: 'AddPurchase',
   data () {
@@ -71,7 +72,8 @@ export default {
       counter: 0,
       currentShot: -1,
       isShot: false,
-      products: products
+      products: products,
+      bucket: []
     }
   },
   watch: {
@@ -86,6 +88,10 @@ export default {
       this.isShot = false
     },
     purchaseProduct () {
+      this.bucket.push({
+        name: this.products[this.currentShot].name,
+        cost: this.products[this.currentShot].cost
+      })
       this.counter += 1
       this.isShot = false
     },
@@ -97,6 +103,14 @@ export default {
         this.isShot = !this.isShot
       }.bind(this), 500)
     }
+  },
+  created () {
+    this.bucket = JSON.parse(window.localStorage.getItem('bucket')) || []
+    this.counter = this.bucket.length || 0
+  },
+  beforeRouteLeave (to, from, next) {
+    window.localStorage.setItem('bucket', JSON.stringify(this.bucket))
+    next()
   }
 }
 </script>

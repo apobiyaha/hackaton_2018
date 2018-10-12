@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <div class="row justify-center" v-for="(card, index) in cards" :key="card.name">
+    <div class="row justify-center" v-for="(card, index) in cards" :key="index">
       <card  :brand="card.brand"
              :number="card.number"
              :is-active="card.active"
@@ -22,6 +22,8 @@
 
 <script>
 import Card from '../components/card/Card'
+import eventbus from '../eventbus/eventbus'
+
 export default {
   name: 'Cards',
   components: { Card },
@@ -65,6 +67,7 @@ export default {
         this.cards[i].active = false
       }
       this.cards[index].active = true
+      eventbus.$emit('setPaymentCard', this.cards[index].number)
     }
   }
 

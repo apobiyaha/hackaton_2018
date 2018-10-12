@@ -6,7 +6,7 @@
       </q-btn>
 
       <q-toolbar-title>
-        4111 1111 1111 1111
+        {{ cardNumber }}
       </q-toolbar-title>
     </q-toolbar>
   </q-layout-header>
@@ -17,10 +17,21 @@ import eventbus from '../../eventbus/eventbus'
 
 export default {
   name: 'Navbar',
+  data () {
+    return {
+      cardNumber: '5555 5555 5555 4444'
+    }
+  },
   methods: {
     openDrawer () {
       eventbus.$emit('leftDrawerOpen')
+    },
+    handler (data) {
+      this.cardNumber = data
     }
+  },
+  created () {
+    eventbus.$on('setPaymentCard', this.handler)
   }
 }
 </script>
