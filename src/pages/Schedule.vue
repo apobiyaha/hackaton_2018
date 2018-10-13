@@ -24,7 +24,7 @@ export default {
       model: Costs,
       options: [
         {
-          label: 'Расходы',
+          label: 'Предложения',
           value: Costs
         },
         {

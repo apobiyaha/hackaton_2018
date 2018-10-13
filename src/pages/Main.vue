@@ -34,7 +34,7 @@ export default {
           path: '/app/add-item'
         },
         {
-          name: 'Акционы',
+          name: 'Акции...',
           icon: 'shop_two',
           color: 'deep-orange',
           path: '/app/sale'
@@ -57,7 +57,7 @@ export default {
           path: '/app/settings'
         },
         {
-          name: ' Выход .',
+          name: ' Выход...',
           icon: 'logout',
           color: 'secondary',
           path: '/'

@@ -9,21 +9,22 @@
             <q-item-tile icon="chat_bubble" color="green">
             </q-item-tile>
           </q-item-side>
-          <q-item-main label="Евроопт" />
+          <q-item-main label="Market1" />
           <q-item-side right>
-            <q-item-tile icon="chat_bubble" color="green" />
+            <q-item-tile icon="star" color="orange" />
           </q-item-side>
         </q-item>
         <q-item-separator />
         <q-item>
           <q-item-side icon="chat_bubble" color="green" />
-          <q-item-main label="Алми" />
-          <q-item-side right icon="chat_bubble" />
+          <q-item-main label="Market2" />
+          <q-item-side right icon="star_half" color="orange"/>
         </q-item>
         <q-item-separator />
         <q-item>
           <q-item-side icon="chat_bubble" color="green"/>
-          <q-item-main label="Гиппо" />
+          <q-item-main label="Market3" />
+          <q-item-side right icon="star_border" color="orange"/>
         </q-item>
       </q-list>
     </div>
@@ -43,19 +44,20 @@
           </q-item-side>
           <q-item-main label="Картофель" />
           <q-item-side right>
-            <q-item-tile icon="chat_bubble" color="green" />
+            2.50
           </q-item-side>
         </q-item>
         <q-item-separator />
         <q-item>
           <q-item-side icon="chat_bubble" color="green" />
           <q-item-main label="Свинина" />
-          <q-item-side right icon="chat_bubble" />
+          9.30
         </q-item>
         <q-item-separator />
         <q-item>
           <q-item-side icon="chat_bubble" color="green"/>
           <q-item-main label="Сметана" />
+          1.45
         </q-item>
       </q-list>
     </div>

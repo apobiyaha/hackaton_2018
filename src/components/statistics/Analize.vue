@@ -4,7 +4,7 @@
     <apexcharts width="400" type="bar" :options="chartOptions" :series="series"></apexcharts>
   </div>
   <div class="row">
-    <apexcharts width="400" type="pie" :options="chartOptions" :series="seriesPie" :labels="labels"></apexcharts>
+    <apexcharts width="400" type="pie" :options="chartOptions" :series="seriesPie"></apexcharts>
   </div>
 </div>
 </template>
