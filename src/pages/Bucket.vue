@@ -23,7 +23,7 @@
       <span>Всего: </span>
       <span>{{ countTotalAmount }}</span>
     </div>
-    <div class="row justify-center">
+    <div class="row justify-center" v-if="totalAmount !== 0.00">
       <q-btn color="positive"
              round
              size="3rem"
@@ -43,6 +43,15 @@
                         font-weight: bold">
                 Очистить
             </span>
+      </q-btn>
+    </div>
+    <div v-else class="row justify-center">
+      <q-btn round size="2.2rem"
+             color="deep-orange"
+             @click="$router.push('addPurchase')">
+        <span style="font-size: 1.0rem;font-weight: bold">
+          Добавить покупку
+        </span>
       </q-btn>
     </div>
   </q-page>
