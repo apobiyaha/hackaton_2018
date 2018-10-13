@@ -6,6 +6,10 @@
 
     <h3 class="caption">Корзина</h3>
 
+    <div class="warning" v-if="showWarning">
+      Корзина пуста
+    </div>
+
     <q-list v-for="(item, index) in bucket" :key="index" highlight dense>
       <q-item v-touch-swipe.right="handleSwipeToRemoveItem">
         <q-item-main :label="item.name"/>
@@ -18,8 +22,28 @@
     <div class="total-amount">
       <span>Всего: </span>
       <span>{{ countTotalAmount }}</span>
-      <q-btn class="pay" round color="primary" icon="money" @click="handlePay"/>
-      <q-btn round color="negative" icon="delete_forever" @click="clearBucket"/>
+    </div>
+    <div class="row justify-center">
+      <q-btn color="positive"
+             round
+             size="3rem"
+             class="q-ma-sm"
+             @click="handlePay">
+            <span style="font-size: 1.2rem;
+                         font-weight: bold">
+                Купить
+            </span>
+      </q-btn>
+      <q-btn color="negative"
+             round
+             size="3rem"
+             class="q-ma-sm"
+             @click="clearBucket">
+            <span style="font-size: 1.2rem;
+                        font-weight: bold">
+                Очистить
+            </span>
+      </q-btn>
     </div>
   </q-page>
 </template>
@@ -30,7 +54,8 @@ export default {
   data () {
     return {
       totalAmount: 0.00,
-      bucket: [{}]
+      bucket: [{}],
+      showWarning: false
     }
   },
   computed: {
@@ -49,14 +74,21 @@ export default {
       window.localStorage.clear()
     },
     handlePay () {
-      setTimeout(function () {
-        this.$router.push('/qr')
+      if (this.bucket !== null) {
+        setTimeout(function () {
+          this.$router.push('/app/qr')
+          this.$refs.loader.toggle()
+          this.totalAmount = 0.00
+          this.bucket = []
+          window.localStorage.clear()
+        }.bind(this), 2000)
         this.$refs.loader.toggle()
-        this.totalAmount = 0.00
-        this.bucket = []
-        window.localStorage.clear()
-      }.bind(this), 2000)
-      this.$refs.loader.toggle()
+      } else {
+        this.showWarning = true
+        setTimeout(function () {
+          this.showWarning = false
+        }.bind(this), 2000)
+      }
     },
     handleSwipeToRemoveItem (obj) {
       let index = this.bucket.findIndex((item) => {
@@ -88,8 +120,14 @@ export default {
     padding: 40px;
     text-align: center;
   }
-  .pay {
-    margin: 0 10px 0 20px;
+  .warning {
+    position: fixed;
+    color: #DA2828;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    padding: 10px;
+    top: 110px;
   }
   .spinner {
     position: absolute;

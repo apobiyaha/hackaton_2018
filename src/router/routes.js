@@ -5,6 +5,10 @@ export default [
   },
   {
     path: '/',
+    component: () => import('pages/SignIn.vue')
+  },
+  {
+    path: '/app',
     component: () => import('layouts/Layout.vue'),
     children: [
       {
@@ -28,8 +32,24 @@ export default [
         component: () => import('pages/History.vue')
       },
       {
+        path: 'add-item',
+        component: () => import('pages/AddItem.vue')
+      },
+      {
+        path: 'settings',
+        component: () => import('pages/Settings.vue')
+      },
+      {
         path: 'schedule',
         component: () => import('pages/Schedule.vue')
+      },
+      {
+        path: 'sale',
+        component: () => import('pages/Sale.vue')
+      },
+      {
+        path: 'discount-cards',
+        component: () => import('pages/DiscountCards.vue')
       },
       {
         path: 'qr',

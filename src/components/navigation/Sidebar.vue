@@ -3,37 +3,37 @@
     <q-list no-border link inset-delimiter>
       <q-list-header>Выберите действие</q-list-header>
 
-      <q-item @click.native="$router.push('/')">
+      <q-item @click.native="$router.push('/app')">
         <q-item-side icon="home"/>
         <q-item-main label="Домой" sublabel="Главная страница"/>
       </q-item>
 
-      <q-item @click.native="$router.push('/bucket')">
+      <q-item @click.native="$router.push('/app/bucket')">
         <q-item-side icon="shopping_cart"/>
         <q-item-main label="Корзина" sublabel="Ваши покупки"/>
       </q-item>
 
-      <q-item @click.native="$router.push('/addPurchase')">
+      <q-item @click.native="$router.push('/app/addPurchase')">
         <q-item-side icon="add_a_photo"/>
         <q-item-main label="Добавить покупку" sublabel="Сфотографировать штрихкод"/>
       </q-item>
 
-      <q-item @click.native="$router.push('/cards')">
+      <q-item @click.native="$router.push('/app/cards')">
         <q-item-side icon="credit_card"/>
         <q-item-main label="Мои карты" sublabel="Редактировать кредитные карты"/>
       </q-item>
 
-      <q-item @click.native="$router.push('/history')">
+      <q-item @click.native="$router.push('/app/history')">
         <q-item-side icon="subject"/>
         <q-item-main label="История" sublabel="История ваших покупок"/>
       </q-item>
 
-      <q-item @click.native="$router.push('/schedule')">
+      <q-item @click.native="$router.push('/app/schedule')">
         <q-item-side icon="trending_up"/>
         <q-item-main label="Статистика" sublabel="За последний месяц"/>
       </q-item>
 
-      <q-item @click.native="$router.push('/help')">
+      <q-item @click.native="$router.push('/app/help')">
         <q-item-side icon="help"/>
         <q-item-main label="Помощь" sublabel="Руководство пользователя"/>
       </q-item>
