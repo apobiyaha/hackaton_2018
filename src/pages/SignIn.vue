@@ -1,6 +1,6 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-page-container id="page-container">
+  <q-layout view="1Hh Lpr lFf">
+      <q-page-container id="page-container" class="row justify-center">
       <q-page v-if="state === 'SignIn'">
         <q-btn @click="$router.push('/app')">Войти</q-btn>
         <q-btn @click="state = 'Registration'">Еще нет аккаунта?</q-btn>

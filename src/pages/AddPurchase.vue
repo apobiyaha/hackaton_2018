@@ -15,7 +15,11 @@
           </div>
         </div>
         <div class="row justify-center">
-          <h4>Покупок в корзине: <b>{{counter}}</b></h4>
+          <h4>Покупок в корзине:
+            <span @click="$router.push('/app/bucket')">
+              <b>{{counter}}</b>
+            </span>
+          </h4>
         </div>
         <div class="row" v-if="isShot">
           <div class="row q-ma-sm">
@@ -116,6 +120,9 @@ export default {
 </script>
 
 <style scoped>
+  a {
+    color: orangered;
+  }
   h4 {
     color: #EB3E4A;
   }

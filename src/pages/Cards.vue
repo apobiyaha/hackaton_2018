@@ -58,10 +58,6 @@ export default {
     }
   },
   methods: {
-    // getBalanceRandom (card) {
-    //   this.cards[card].balance = Math.random() * (999 - 50) + 50
-    //   console.log(card)
-    // },
     setActiveCard (index) {
       for (let i = 0; i < this.cards.length; i += 1) {
         this.cards[i].active = false

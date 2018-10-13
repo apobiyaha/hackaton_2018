@@ -72,7 +72,7 @@ module.exports = function (ctx) {
         'QTd',
         'QTableColumns',
         'QBtnToggle',
-        'QCollapsible'
+        'QCollapsible',
         'QSpinnerPuff'
       ],
       directives: [
