@@ -6,7 +6,7 @@
                   <img src="../assets/img/Avatar.png" width="100px">
               </div>
               <div class="login-form">
-                  <h3 style="text-align: center">Вход в сервис</h3>
+                  <h3 class="caption">Вход в сервис</h3>
                   <div>
                       <label>Имя пользователя</label>
                       <q-input type="text" @focus="wrongField = false" :class="setErrorClass" v-model="login"></q-input>
@@ -29,7 +29,7 @@
               <img src="../assets/img/Avatar.png" width="100px">
             </div>
             <div class="login-form">
-              <h3 style="text-align: center">Регистрация</h3>
+              <h3 class="caption">Регистрация</h3>
               <div>
                 <label>Имя пользователя</label>
                 <q-input type="text" @focus="wrongField = false" :class="setErrorClass" v-model="login"></q-input>
