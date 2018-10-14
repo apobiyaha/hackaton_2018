@@ -1,12 +1,14 @@
 <template>
   <q-page>
-    акции
+    <actions></actions>
   </q-page>
 </template>
 
 <script>
+import Actions from '../components/statistics/Actions'
 export default {
-  name: 'Sale'
+  name: 'Sale',
+  components: {Actions}
 }
 </script>
 
