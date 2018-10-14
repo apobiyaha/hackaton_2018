@@ -8,7 +8,7 @@
               <div class="login-form">
                   <h3 style="text-align: center">Вход в сервис</h3>
                   <div>
-                      <label>Ваш Email</label>
+                      <label>Имя пользователя</label>
                       <q-input type="text" @focus="wrongField = false" :class="setErrorClass" v-model="login"></q-input>
                   </div>
                   <div>
@@ -31,7 +31,7 @@
             <div class="login-form">
               <h3 style="text-align: center">Регистрация</h3>
               <div>
-                <label>Ваш Email</label>
+                <label>Имя пользователя</label>
                 <q-input type="text" @focus="wrongField = false" :class="setErrorClass" v-model="login"></q-input>
               </div>
               <div>
