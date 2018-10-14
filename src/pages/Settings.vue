@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    settings
+    <img src="../assets/img/settings.png" alt="">
   </q-page>
 </template>
 
@@ -11,5 +11,7 @@ export default {
 </script>
 
 <style scoped>
-
+  img {
+    height: 85vh;
+  }
 </style>

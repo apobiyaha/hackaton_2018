@@ -102,6 +102,8 @@ export default {
     }
   },
   created () {
+    window.localStorage.removeItem('bucket')
+    window.localStorage.removeItem('homeList')
     this.authDataBase = JSON.parse(window.localStorage.getItem('authDataBase')) || []
   }
 }

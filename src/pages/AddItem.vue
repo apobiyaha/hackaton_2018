@@ -49,6 +49,7 @@ export default {
         }
       })
       this.itemList.splice(index, 1)
+      window.localStorage.setItem('homeList', JSON.stringify(this.itemList))
     }
   },
   created () {
