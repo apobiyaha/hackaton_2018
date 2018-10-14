@@ -37,6 +37,10 @@
         <q-item-side icon="help"/>
         <q-item-main label="Помощь" sublabel="Руководство пользователя"/>
       </q-item>
+      <q-item @click.native="$router.push('/')">
+        <q-item-side icon="logout"/>
+        <q-item-main label="Выход" sublabel="Завершить работу с приложением"/>
+      </q-item>
     </q-list>
   </q-layout-drawer>
 </template>

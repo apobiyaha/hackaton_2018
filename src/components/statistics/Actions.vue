@@ -29,7 +29,7 @@
       </q-list>
     </div>
   </q-collapsible>
-  <q-collapsible icon="perm_identity" label="Люди">
+  <q-collapsible icon="where_to_vote" label="Услуги">
     <div>
       Content
     </div>

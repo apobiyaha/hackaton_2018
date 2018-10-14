@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <img src="../assets/img/c_qrcode.gif" alt="">
+    <img src="../assets/img/Avatar.png" alt="">
   </q-page>
 </template>
 
